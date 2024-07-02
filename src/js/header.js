@@ -4,7 +4,7 @@ function headerFunction(){
     header.className = "title-bar";
     const img = new Image();
     img.src = ListIcon;
-    img.className = "icon";
+    img.className = "header-icon";
     const h1 = document.createElement("h1");
     h1.className = "title";
     h1.textContent = "To-do List";
