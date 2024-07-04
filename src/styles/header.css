@@ -1,5 +1,6 @@
 .title-bar{
     background-color: #E4F4F3;
+    width: 80vw;
     height: 20vh;
     display: flex;
     justify-content: center;

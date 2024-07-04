@@ -1,0 +1,53 @@
+.content{
+    margin-left: 2%; 
+    margin-top: 2%;
+  
+}
+
+.card-container{
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3%;
+    overflow-y: auto;
+}
+
+.button-container{
+    display: relative;
+}
+
+.task-btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    bottom: 2%;
+    right: 2%;
+    height: 8vh;
+    width: 20vw;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    background-color: #32CD32;
+    border: 1px solid #32CD32;
+}
+
+h3, p{
+    display: inline
+}
+
+.card{
+    height: 30vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    border: 1px solid black;
+    padding: 3%;
+    border-radius: 10px;
+    text-align: justify;
+    overflow-y: auto;
+    text-wrap: wrap;
+}
