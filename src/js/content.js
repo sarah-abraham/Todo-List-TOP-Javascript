@@ -1,9 +1,10 @@
 import "../styles/content.css";
 import PlusIcon from "../assets/plus-circle-white.svg";
 
-function createCard(title, description, priority, due){
+function createCard(title, description, priority, due, projectName){
     const card = document.createElement("div");
     card.className = "card";
+    card.dataset.projectName = projectName;
     const h3Title = document.createElement("h3");
     h3Title.textContent = "Title: "+title;
 

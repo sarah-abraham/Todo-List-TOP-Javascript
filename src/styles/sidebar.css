@@ -58,7 +58,7 @@
     flex-grow: 1;
 }
 
-.new-project{
+.sidebar-item{
     font-size: 1.3rem;
     border: 0px;
     border-bottom: 1px solid black;

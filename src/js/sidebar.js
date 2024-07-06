@@ -1,5 +1,19 @@
 import "../styles/sidebar.css";
 import PlusIcon from "../assets/plus-circle.svg"
+
+
+function filterCardsByProject(projectName) {
+    const allCards = document.querySelectorAll(".card");
+    allCards.forEach(card => {
+        if (card.dataset.projectName === projectName) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+
 function sidebarTitleFunction(){
     const sidebarTitleContainer = document.createElement("div");
     sidebarTitleContainer.className = "sidebar-title-container";
@@ -27,18 +41,27 @@ const projectsContainer = document.createElement("div");
 projectsContainer.className = "project-container";
 function sidebarBodyFunction(projectName){
     const newProject = document.createElement("button");
-    newProject.className = "new-project";
+    newProject.className = `${projectName}-sidebar-item sidebar-item`;
+    newProject.dataset.projectName = projectName;
     newProject.textContent = projectName;
 
-    // Create the cross symbol
     const cross = document.createElement("span");
     cross.className = "cross-icon";
     cross.innerHTML = "&times;"; 
 
-    // Add an event listener to delete the button on click
+    
     cross.addEventListener("click", function(event) {
-        event.stopPropagation(); // Prevent the button's click event from triggering
+        event.stopPropagation();
         projectsContainer.removeChild(newProject);
+    });
+
+    newProject.addEventListener('click', () => {
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.classList.remove('sidebar-item-selected');
+        });
+        newProject.classList.add('sidebar-item-selected');
+        
+        filterCardsByProject(projectName);
     });
 
     newProject.appendChild(cross);
