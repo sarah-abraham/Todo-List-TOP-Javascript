@@ -22,6 +22,7 @@
     justify-content: center;
     align-items: center;
     gap: 1vw;
+    
     bottom: 2%;
     right: 2%;
     height: 8vh;
@@ -39,6 +40,7 @@ h3, p{
 }
 
 .card{
+    position: relative;
     height: 30vh;
     width: 20vw;
     display: flex;
@@ -49,5 +51,20 @@ h3, p{
     border-radius: 10px;
     text-align: justify;
     overflow-y: auto;
-    text-wrap: wrap;
+    overflow-x: hidden;
+}
+
+.card p, .card h2{
+    word-wrap:break-word;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }

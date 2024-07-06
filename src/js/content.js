@@ -7,6 +7,16 @@ function createCard(title, description, priority, due){
     const h3Title = document.createElement("h3");
     h3Title.textContent = "Title: "+title;
 
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "delete-button";
+    deleteButton.textContent = "✖"; // Unicode character for cross
+
+    // Add event listener to delete the card when clicked
+    deleteButton.addEventListener("click", () => {
+        card.remove();
+    });
+
+
     const descriptionContainer = document.createElement("div");
     descriptionContainer.className = "description-container";
     const h3Description = document.createElement("h3");
@@ -31,6 +41,7 @@ function createCard(title, description, priority, due){
     date.appendChild(h3Date);
 
     card.appendChild(h3Title);
+    card.appendChild(deleteButton);
     card.appendChild(descriptionContainer);
     card.appendChild(priorityContainer);
     card.appendChild(date);

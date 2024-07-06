@@ -24,12 +24,24 @@ function sidebarTitleFunction(){
 }
 
 const projectsContainer = document.createElement("div");
-    projectsContainer.className = "project-container";
+projectsContainer.className = "project-container";
 function sidebarBodyFunction(projectName){
-    
     const newProject = document.createElement("button");
     newProject.className = "new-project";
     newProject.textContent = projectName;
+
+    // Create the cross symbol
+    const cross = document.createElement("span");
+    cross.className = "cross-icon";
+    cross.innerHTML = "&times;"; 
+
+    // Add an event listener to delete the button on click
+    cross.addEventListener("click", function(event) {
+        event.stopPropagation(); // Prevent the button's click event from triggering
+        projectsContainer.removeChild(newProject);
+    });
+
+    newProject.appendChild(cross);
     projectsContainer.append(newProject);
     return projectsContainer;
 }
